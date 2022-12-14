@@ -43,4 +43,10 @@ public class PassengerController {
     public Passenger getPassengerTitle(@PathVariable String passengerTitle) {
         return (Passenger) newService.getPassenger(passengerTitle);
     }
+
+    @GetMapping("/{passengerPhoneNo}")
+    public Passenger getPassengerPhoneNo(@PathVariable String passengerPhoneNo) {
+        return (Passenger) newService.getPassenger(passengerPhoneNo);
+    }
+
 }
