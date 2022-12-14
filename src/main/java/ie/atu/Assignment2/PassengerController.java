@@ -49,4 +49,9 @@ public class PassengerController {
         return (Passenger) newService.getPassenger(passengerPhoneNo);
     }
 
+    @GetMapping("/{passengerAge}")
+    public Passenger getPassengerAge(@PathVariable String passengerAge) {
+        return (Passenger) newService.getPassenger(passengerAge);
+    }
+
 }
