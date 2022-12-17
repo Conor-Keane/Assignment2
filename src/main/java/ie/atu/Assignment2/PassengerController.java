@@ -23,7 +23,7 @@ public class PassengerController {
         SpringApplication.run(PassengerController.class, args);
     }
 
-    @GetMapping("")
+    @GetMapping
     public List<Passenger> getMyPassengers()
     {
         return newService.getPassengers();

@@ -5,14 +5,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
 
 @AllArgsConstructor
 @Getter
 @Setter
 @NoArgsConstructor
-@Entity
-@Table
 public class Passenger {
     private String Title;
     private String Name;
@@ -20,8 +17,6 @@ public class Passenger {
     private String PhoneNo;
     private int Age;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private long count;
 
     public Passenger(String title, String name, String ID, String phoneNo, int age) {
