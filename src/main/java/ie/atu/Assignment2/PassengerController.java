@@ -28,7 +28,7 @@ public class PassengerController {
     public void deletePassenger(@PathVariable("count") Long count){
         newService.deletePassenger(count);
     }
-    //http://localhost:8081/anpi/passeger/age?age_start=1&age_end=60
+    //http://localhost:8801/anpi/passeger/age?age_start=1&age_end=60
     @GetMapping("/age")
     public  List<Passenger> findPassengerByAgeRange(@RequestParam(name = "age_start") int age1, @RequestParam(name = "age_end") int age2){
         return newService.findPassengerByAge(age1,age2);
@@ -43,6 +43,5 @@ public class PassengerController {
     {
         return newService.getPassengers();
     }
-    //http://localhost:8081/api/passenger/age?age_start=1&age_end=60
 
 }

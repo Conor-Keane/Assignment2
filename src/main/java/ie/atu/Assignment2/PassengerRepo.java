@@ -12,3 +12,5 @@ public interface PassengerRepo extends JpaRepository <Passenger, Long> {
     @Query("SELECT p FROM Passenger p WHERE p.age > ?1 and p.age < ?2")
     public List<Passenger> findPassengerByAge(int age, int age2);
 }
+
+//test

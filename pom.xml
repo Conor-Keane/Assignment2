@@ -57,13 +57,16 @@
 			<plugin>
 				<groupId>com.google.cloud.tools</groupId>
 				<artifactId>jib-maven-plugin</artifactId>
-				<version>2.5.0</version>
+				<version>3.2.1</version>
 				<configuration>
+					<from>
+						<image>openjdk:17</image>
+					</from>
 					<to>
 						<image>registry.hub.docker.com/conor01/passengerpart2</image>
 						<auth>
 							<username>conor01</username>
-							<password>Samandsocks1</password>
+							<password>conorjkeane01</password>
 						</auth>
 					</to>
 				</configuration>
