@@ -20,9 +20,9 @@ public class PassengerController {
     public void savePassenger(@RequestBody Passenger newpassenger){
         newService.savePassenger(newpassenger);
     }
-    @GetMapping("/name/{Name}")
-    public Passenger getPassengerName(@PathVariable("Name") String Name){
-        return newService.findPassengerByName(Name);
+    @GetMapping("/name/{name}")
+    public Passenger getPassengerName(@PathVariable("name") String name){
+        return newService.findPassengerByName(name);
     }
     @DeleteMapping("/delete/{count}")
     public void deletePassenger(@PathVariable("count") Long count){

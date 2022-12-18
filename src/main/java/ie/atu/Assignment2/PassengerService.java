@@ -9,11 +9,6 @@ import java.util.List;
 public class PassengerService {
 
     private final PassengerRepo passengerRepo;
-    public Passenger getPassenger(@PathVariable String passengerID)
-
-    {
-        return new Passenger("Mr", "Conor", "1234", "0879543461", 21);
-    }
 
     public List<Passenger> getPassengers() {
         return passengerRepo.findAll();

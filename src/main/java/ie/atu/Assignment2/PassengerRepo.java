@@ -9,6 +9,6 @@ import java.util.List;
 public interface PassengerRepo extends JpaRepository <Passenger, Long> {
     public Passenger findPassengerByName(String Name);
 
-    @Query("SELECT p FROM Passenger p WHERE p.Age > ?1 and p.Age < ?2")
+    @Query("SELECT p FROM Passenger p WHERE p.age > ?1 and p.age < ?2")
     public List<Passenger> findPassengerByAge(int age, int age2);
 }
