@@ -16,7 +16,7 @@ services:
   api:
     image: conor01/passengerpart2
     ports:
-      - 8803:8801
+      - 8802:8801
     volumes:
       - /data/application
     networks:
