@@ -13,4 +13,4 @@ public interface PassengerRepo extends JpaRepository <Passenger, Long> {
     public List<Passenger> findPassengerByAge(int age, int age2);
 }
 
-//test
+
