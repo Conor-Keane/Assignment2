@@ -1,5 +1,4 @@
 #Test
-
 version: '2'
 services:
   db:
@@ -17,7 +16,7 @@ services:
   api:
     image: conor01/passengerpart2
     ports:
-      - 8801:8801
+      - 8803:8801
     volumes:
       - /data/application
     networks:
