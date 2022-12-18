@@ -18,4 +18,21 @@ public class PassengerService {
     public List<Passenger> getPassengers() {
         return passengerRepo.findAll();
     }
+
+    public void savePassenger(Passenger newpassenger) {
+        passengerRepo.save(newpassenger);
+    }
+
+    public Passenger findPassengerByName(String Name){
+        return passengerRepo.findPassengerByName(Name);
+    }
+
+    public void deletePassenger(Long count){
+        passengerRepo.deleteById(count);
+    }
+//http://localhost:8081/api/passenger/age?age_start=1&age_end=60
+
+    public  List<Passenger> findPassengerByAge(int age1, int age2){
+        return passengerRepo.findPassengerByAge(age1,age2);
+    }
 }

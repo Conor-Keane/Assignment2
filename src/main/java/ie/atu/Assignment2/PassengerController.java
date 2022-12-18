@@ -2,10 +2,7 @@ package ie.atu.Assignment2;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @SpringBootApplication
@@ -19,6 +16,24 @@ public class PassengerController {
         this.newService = newService;
     }
 
+    @PostMapping("")
+    public void savePassenger(@RequestBody Passenger newpassenger){
+        newService.savePassenger(newpassenger);
+    }
+    @GetMapping("/name/{Name}")
+    public Passenger getPassengerName(@PathVariable("Name") String Name){
+        return newService.findPassengerByName(Name);
+    }
+    @DeleteMapping("/delete/{count}")
+    public void deletePassenger(@PathVariable("count") Long count){
+        newService.deletePassenger(count);
+    }
+    //http://localhost:8081/anpi/passeger/age?age_start=1&age_end=60
+    @GetMapping("/age")
+    public  List<Passenger> findPassengerByAgeRange(@RequestParam(name = "age_start") int age1, @RequestParam(name = "age_end") int age2){
+        return newService.findPassengerByAge(age1,age2);
+    }
+
     public static void main(String[] args) {
         SpringApplication.run(PassengerController.class, args);
     }
@@ -28,30 +43,6 @@ public class PassengerController {
     {
         return newService.getPassengers();
     }
-
-    @GetMapping("/{passengerID}")
-    public Passenger getPassenger(@PathVariable String passengerID) {
-        return (Passenger) newService.getPassenger(passengerID);
-    }
-
-    @GetMapping("/{passengerName}")
-    public Passenger getPassengersName(@PathVariable String passengerName) {
-        return (Passenger) newService.getPassenger(passengerName);
-    }
-
-    @GetMapping("/{passengerTitle}")
-    public Passenger getPassengerTitle(@PathVariable String passengerTitle) {
-        return (Passenger) newService.getPassenger(passengerTitle);
-    }
-
-    @GetMapping("/{passengerPhoneNo}")
-    public Passenger getPassengerPhoneNo(@PathVariable String passengerPhoneNo) {
-        return (Passenger) newService.getPassenger(passengerPhoneNo);
-    }
-
-    @GetMapping("/{passengerAge}")
-    public Passenger getPassengerAge(@PathVariable String passengerAge) {
-        return (Passenger) newService.getPassenger(passengerAge);
-    }
+    //http://localhost:8081/api/passenger/age?age_start=1&age_end=60
 
 }
